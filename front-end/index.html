@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Monaco Editor Integration</title>
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.26.1/min/vs/loader.js"></script>
+    <style>
+        body, *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #response_box{
+            border: 10px solid black;
+            background-color:#ccc;
+            text-align: justify;
+            padding: 20px;
+            color: black;
+            font-weight: bold;
+        }
+        #main_div{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        #filter_box{
+            display: flex;
+            padding: 20px;
+            justify-content: space-evenly;
+            background-color: #007bff;
+            height: 200px;
+        }
+        #filter_box > select, button{
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: #12122c;
+            color: white;
+            cursor: pointer;
+            font-size:.8rem;
+            margin: auto.5em ;
+            width: 12%;
+            cursor: pointer;
+        }
+        #filter_box > button:hover, #filter_box >select:hover{
+            background-color: transparent;
+            border: solid;
+            letter-spacing: 3px;
+            color: white;
+            transition: 1s ease-in;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="filter_box">
+        <select id="choose_lang">
+            <option value="">Choose Language</option>
+            <option value="javascript">Javascript</option>
+            <option value="typescipt">Typescipt</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="ruby">Ruby</option>
+            <option value="php">php</option>
+            <option value="cpp">C++</option>
+            <option value="c">C Language</option>
+        </select>
+
+
+        <button onclick="handleConvert()">Convert</button>
+        <button onclick="handleDebug()">Debug</button>
+        <button onclick="handlePerformace()">Performance</button>
+
+    </div>
+
+    <div id="main_div">
+        <div id="editorContainer" style="width: 800px; height: 600px;">
+        </div>
+    
+        <div id="response_box" >
+    
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+
+<script src="./index.js"></script>
